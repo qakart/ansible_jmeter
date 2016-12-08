@@ -1,0 +1,4 @@
+---
+
+- name:   run test
+  command: /srv/jmeter/apache-jmeter-3.1/bin/jmeter -JHOST=192.168.124.245 -JPORT=5000 -JNBR_USER=50 -n -t /application/csrf_token_user_defined_variable.jmx -l /application/results.jtl

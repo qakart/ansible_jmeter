@@ -1,0 +1,16 @@
+---
+- name: lancement des mises a jour
+  yum:  name=* state=latest
+
+- name: install libselinux
+  yum:  name=libselinux-python state=latest
+
+- name: install openjdk
+  yum:  name=java-1.8.0-openjdk state=latest
+
+- name: install wget
+  yum:  name=wget state=latest
+
+- name: install tar
+  yum:  name=tar state=latest
+

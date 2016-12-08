@@ -1,0 +1,18 @@
+---
+- name: create directory
+  file: path=/srv/jmeter  state=directory
+
+- name: Download Jmeter
+  get_url: url=http://apache.trisect.eu//jmeter/binaries/apache-jmeter-3.1.tgz dest=/srv/jmeter/apache-jmeter-3.1.tgz
+
+- name: Extract archive
+  command: chdir=/srv/jmeter /bin/tar xvf  apache-jmeter-3.1.tgz creates=/software
+
+- name: create directory
+  file: path=/application  state=directory
+
+- name: copy jmx
+  copy: src=csrf_token_user_defined_variable.jmx  dest=/application/
+
+- name: copy csv
+  copy: src=data.csv  dest=/application/
